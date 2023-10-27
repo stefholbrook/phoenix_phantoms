@@ -1,10 +1,12 @@
 <.flash_group flash={@flash} />
-<%= for _n <- 0..5 do %>
-  <.ghost x={Enum.random(0..1024)} y={Enum.random(0..768)} float_speed={Enum.random(1..4)} />
+<%= for {sample, int} <- Enum.with_index(["crow.wav", "scream.wav", "thunder.wav", "witch.wav", "wolf.mp3", "zombie.wav"]) do %>
+  <.sfx id={"sample_#{int}"} sample={"sfx/#{sample}"}>
+    <.ghost x={Enum.random(0..1024)} y={Enum.random(0..768)} float_speed={Enum.random(1..4)} />
+  </.sfx>
 <% end %>
 
 <div class="left-[40rem] fixed inset-y-0 right-0 z-0 hidden lg:block xl:left-[50rem] bg-[url('/images/bg.png')]"></div>
-<div class="px-4 py-10 sm:px-6 sm:py-28 lg:px-8 xl:px-28 xl:py-32">
+<%!-- <div class="px-4 py-10 sm:px-6 sm:py-28 lg:px-8 xl:px-28 xl:py-32">
   <div class="mx-auto max-w-xl lg:mx-0">
     <.sfx id="hehehe" sample="sfx/witch.mp3">
       <span class="font-['Witch'] text-orange-600 text-8xl">t</span>
@@ -182,4 +184,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> --%>

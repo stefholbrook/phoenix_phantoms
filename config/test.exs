@@ -16,7 +16,7 @@ config :phoenix_phantoms, PhoenixPhantoms.Repo,
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
 config :phoenix_phantoms, PhoenixPhantomsWeb.Endpoint,
-  http: [ip: {127, 0, 0, 1}, port: 4002],
+  http: [ip: {127, 0, 0, 1}, port: 4000],
   secret_key_base: "5XEk3ZTdqw5RI/hF0RIBNWITd3+9cM+wXmY4TSRy/UOi9k9+Z81phxq7GRuIZeaS",
   server: false
 

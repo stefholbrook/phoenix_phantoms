@@ -7,6 +7,12 @@
 # General application configuration
 import Config
 
+config :live_view_native, :platforms, [LiveViewNativeSwiftUi.Platform]
+
+config :live_view_native, LiveViewNativeSwiftUi.Platform,
+  app_name: "LVNTutorial",
+  custom_modifiers: []
+
 config :phoenix_phantoms,
   ecto_repos: [PhoenixPhantoms.Repo]
 
@@ -62,3 +68,5 @@ config :phoenix, :json_library, Jason
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{config_env()}.exs"
+
+import_config "native.exs"

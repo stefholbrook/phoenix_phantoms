@@ -27,9 +27,11 @@ const Hooks = {
     mounted() {
       let sample = this.el.dataset.sample;
 
+
       // Setup the new Howl.
       this.sound = new Howl({ src: [sample] });
       this.el.addEventListener("click", e => {
+        console.log(e)
         this.playSample();
       });
 
